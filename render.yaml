@@ -1,14 +1,14 @@
 # render.yaml
 services:
   - type: web
-    name: bigdaddy-auto-deploy
+    name: tictac-auto-deploy
     env: node
     plan: free
     buildCommand: |
       npm install
       # Force fresh clone every deploy
-      node index.js --download
-    startCommand: node index.js
+      node server.js --download
+    startCommand: node server.js
     envVars:
       - key: NODE_ENV
         value: production
